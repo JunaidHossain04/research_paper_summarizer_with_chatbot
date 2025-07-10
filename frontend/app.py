@@ -20,15 +20,16 @@ uploaded_file = st.file_uploader("Choose a PDF file", type=["pdf"])
 
 if uploaded_file is not None:
     if uploaded_file.name != st.session_state["last_uploaded_file_name"]:
-        with st.spinner("Processing PDF and generating summaries..."):
+        with st.spinner("Processing PDF..."):
             files = {"file": (uploaded_file.name, uploaded_file, "application/pdf")}
+        with st.spinner("Generating Summary..."):
             response = requests.post(f"{BACKEND_URL}/upload/", files=files)
             if response.status_code == 200:
                 data = response.json()
                 st.session_state["session_id"] = data["session_id"]
                 st.session_state["summaries"] = data["summaries"]
                 st.session_state["last_uploaded_file_name"] = uploaded_file.name
-                st.success("Summaries generated!")
+                st.success("Summary generated!")
             else:
                 st.error("Error uploading or processing PDF.")
 
