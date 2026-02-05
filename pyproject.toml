@@ -1,0 +1,22 @@
+[project]
+name = "research-paper-summarizer-with-chatbot"
+version = "0.1.0"
+description = "A sophisticated tool to summarize and chat with research papers using AI."
+readme = "README.md"
+requires-python = ">=3.9"
+dependencies = [
+    "fastapi>=0.100.0",
+    "uvicorn[standard]>=0.20.0",
+    "python-multipart>=0.0.6",
+    "requests>=2.31.0",
+    "streamlit>=1.30.0",
+    "langchain-openai>=0.0.5",
+    "python-dotenv>=1.0.0",
+    "numpy>=1.24.0",
+    "faiss-cpu>=1.7.4",
+    "pypdf2>=3.0.0",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
