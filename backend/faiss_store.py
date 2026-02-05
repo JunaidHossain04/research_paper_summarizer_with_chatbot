@@ -41,9 +41,6 @@ def embed_chunks(chunk_dict: Dict[str, List[str]]) -> Tuple[List[str], np.ndarra
     # This may fail if chunk_texts is too large for a single API call limit, 
     # but langchain usually handles chunking internally or implementation is manageable for typical PDF sizes.
     embeddings = embedder.embed_documents(chunk_texts)
-    
-    # FAISS requires float32 vectors
-    return chunk_titles, np.array(embeddings, dtype=np.float32)
 
 def create_faiss_index(vectors: np.ndarray) -> faiss.Index:
     """
