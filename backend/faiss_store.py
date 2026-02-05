@@ -31,7 +31,6 @@ def embed_chunks(chunk_dict: Dict[str, List[str]]) -> Tuple[List[str], np.ndarra
     for title, chunk_list in chunk_dict.items():
         for i, chunk in enumerate(chunk_list):
             key = f"{title} - Part {i+1}" if len(chunk_list) > 1 else title
-            chunk_titles.append(key)
             chunk_texts.append(chunk)
 
     if not chunk_texts:
