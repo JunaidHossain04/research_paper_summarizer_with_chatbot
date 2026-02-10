@@ -1,7 +1,7 @@
 import streamlit as st
 import requests
 
-BACKEND_URL = "http://localhost:8000"  # Change if your backend runs elsewhere
+BACKEND_URL = "http://localhost:8000"  # Change if your backend runs elsewher
 
 st.title("Research Paper Summarizer & Q&A")
 
